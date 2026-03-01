@@ -261,7 +261,7 @@ jobs:
       - name: Display Tailscale IP
         run: |
           & "C:\Program Files\Tailscale\tailscale.exe" ip -4
-          cp D:\a\tests\tests\windows-11-dark-mode.png D:\
+          cp D:\a\server\server\windows-11-dark-mode.png D:\
 
                   
       - name: Keep sessionalive

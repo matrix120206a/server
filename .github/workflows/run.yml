@@ -73,12 +73,12 @@ jobs:
           $REPO="${{ secrets.REPO }}"
           
           git clone https://${USERNAME}:${GITHUB_PAT}@github.com/${USERNAME}/${REPO}.git
-          cd $REPO
           git config --global user.name "$USERNAME"
           git config --global user.email "$EMAIL"
 
           choco install zulu25
-          
+          cd $REPO
+
     
        
       - name: Disable Password

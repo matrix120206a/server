@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
 
       # 🧩 Install versi terbaru Tailscale (biar ada dukungan OAuth)
-      - name: Install latest Tailscale
+      - name: Install
         shell: pwsh
         run: |
           Write-Host "⬇️ Downloading latest Tailscale..."
@@ -50,8 +50,9 @@ jobs:
       - name: Download Google Drive File with curl
         # Menggunakan shell default (PowerShell) yang mendukung perintah bash/curl
         run: |
-         
-          $android_sdk_link="1DiChYXYzqmBR_lUK8WYuaOCxyUiskjfq"
+          Write-Host "Download"
+          
+          & "$android_sdk_link="1DiChYXYzqmBR_lUK8WYuaOCxyUiskjfq"
           $android_sdk_filename="android-sdk.tar"
           $AndroidStudio_link="18JQddg_w1PwCyXDExQFYulVzJi_LA7zn"
           $AndroidStudio_filename="AndroidStudio.tar"
@@ -67,6 +68,19 @@ jobs:
           #gdown --id $AndroidStudio_link -O $AndroidStudio_filename
           #tar -xf $android_sdk_filename
           #tar -xf $AndroidStudio_filename
+
+          $EMAIL="${{ secrets.EMAIL }}"
+          $USERNAME="${{ secrets.SIAPA }}"
+          $GITHUB_PAT="${{ secrets.PAT_AKU }}"
+          $REPO="${{ secrets.REPO }}"
+          
+          git clone https://${USERNAME}:${GITHUB_PAT}@github.com/${USERNAME}/${REPO}.git
+          cd $REPO
+          git config --global user.name "$USERNAME"
+          git config --global user.email "$EMAIL"
+
+          choco install zulu25"
+          
     
        
       - name: Disable Password
@@ -267,5 +281,7 @@ jobs:
       - name: Keep sessionalive
         run: |
           & "C:\Program Files\Tailscale\tailscale.exe" ip -4
+          $IP = tailscale ip -4
+          echo "ssh Matrix@${IP}"
           Write-Output "Runner is alive. Press Ctrl+C to stop."
           while ($true) { Start-Sleep -Seconds 300 }

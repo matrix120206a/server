@@ -225,7 +225,7 @@ jobs:
           @'
           Start-Process "rundll32.exe" -ArgumentList 'themecpl.dll,OpenThemeAction C:\Windows\resources\Themes\dark.theme'
           RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
-          Copy-Item -Path "D:\testw\Scripts\windows-11-dark-mode.png" -Destination "C:\Users\Matrix\Desktop\"
+          Copy-Item -Path "D:\server\Scripts\windows-11-dark-mode.png" -Destination "C:\Users\Matrix\Desktop\"
 
           '@ | Out-File -FilePath C:\Scripts\ApplyDarkTheme.ps1 -Encoding UTF8
           

@@ -72,7 +72,7 @@ jobs:
           $GITHUB_PAT="${{ secrets.PAT_AKU }}"
           $REPO="${{ secrets.REPO }}"
           
-          cd C:\Users\matrix\
+          #cd C:\Users\matrix\
           git clone https://${USERNAME}:${GITHUB_PAT}@github.com/${USERNAME}/${REPO}.git
           git config --global user.name "$USERNAME"
           git config --global user.email "$EMAIL"

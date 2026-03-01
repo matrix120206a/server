@@ -280,7 +280,7 @@ jobs:
       - name: Keep sessionalive
         run: |
           & "C:\Program Files\Tailscale\tailscale.exe" ip -4
-          $IP = tailscale ip -4
+          $IP = C:\Program Files\Tailscale\tailscale.exe ip -4
           echo "ssh Matrix@${IP}"
           Write-Output "Runner is alive. Press Ctrl+C to stop."
           while ($true) { Start-Sleep -Seconds 300 }

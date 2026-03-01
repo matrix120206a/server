@@ -1,4 +1,4 @@
-name: Testw
+name: S
 
 on:
   push:
@@ -50,9 +50,7 @@ jobs:
       - name: Download Google Drive File with curl
         # Menggunakan shell default (PowerShell) yang mendukung perintah bash/curl
         run: |
-          Write-Host "Download"
-          
-          & "$android_sdk_link="1DiChYXYzqmBR_lUK8WYuaOCxyUiskjfq"
+          $android_sdk_link="1DiChYXYzqmBR_lUK8WYuaOCxyUiskjfq"
           $android_sdk_filename="android-sdk.tar"
           $AndroidStudio_link="18JQddg_w1PwCyXDExQFYulVzJi_LA7zn"
           $AndroidStudio_filename="AndroidStudio.tar"
@@ -79,7 +77,7 @@ jobs:
           git config --global user.name "$USERNAME"
           git config --global user.email "$EMAIL"
 
-          choco install zulu25"
+          choco install zulu25
           
     
        

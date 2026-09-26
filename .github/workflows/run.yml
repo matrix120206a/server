@@ -223,7 +223,6 @@ jobs:
         shell: pwsh
         run: |
           tzutil /s "SE Asia Standard Time"
-          Remove-Item -Path "C:\Program Files\Microsoft Visual Studio" -Force
 
       - name: Setup Auto Apply Dark Theme and Execute Batch Files
         shell: pwsh
